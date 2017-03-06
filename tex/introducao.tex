@@ -1,0 +1,25 @@
+% Comando simples para exibir comandos Latex no texto
+\newcommand{\comando}[1]{\textbf{$\backslash$#1}}
+
+Este documento explica brevemente como trabalhar com a classe \LaTeX~\textit{ufgrc} para confeccionar trabalhos acadêmicos seguindo as normas da \sigla{ABNT}{Associação Brasileira de Normas Técnicas}\cite{NBR14724:2011}. O presente manual visa atender as exigências da \sigla{UFG}{Universidade Federal de Goiás}.
+
+
+A classe \textit{ufgrc} foi construída com base na última versão da classe \textit{abntex2} e do pacote \textit{abntex2cite}. Portanto, este documento exemplifica a elaboração de trabalho
+acadêmico (tese, dissertação e outros do gênero) produzido conforme a ABNT NBR
+14724:2011 \textit{Informação e documentação - Trabalhos acadêmicos - Apresentação}.
+
+Assim, é altamente recomendável que seja consultada a documentação do \textit{abntex2}\footnote{http://abntex.net.br}. A classe \textit{abntex2} foi desenvolvida para facilitar a escrita de documentos seguindo as normas da ABNT no ambiente \LaTeX\;\cite{frasson:2005:classe_abnt}.
+
+Todo o trabalho de pesquisa e ajustes da presente classe \LaTeX~\emph{ufgrc} foram feitos pelo ex-aluno de Ciências da Computação da UFG -- Regional Catalão, Humberto Lidio Antonelli, que colaborou para o desenvolvimento do modelo utilizado anteriormente pelo curso.
+
+O requisito básico para utilização da classe \textit{ufgrc} é criar um documento desta classe com o comando
+\comando{documentclass[@parameters]\{ufgrc\}} e ter, no diretório de trabalho, o arquivo \emph{ufgrc.cls} presente. Entretanto, recomenda-se fortemente manter a estrutura de diretório inicial fornecida por este modelo. Os parâmetros possíveis utilizados pelo \comando{documentclass} são:
+\begin{description}
+    \item[tcc1 / tcc2] Identifica a etapa de trabalho correspondente ao qual o aluno está, sendo utilizado apenas uma das duas opcões disponíveis. O valor padrão é \textbf{tcc2};
+    
+    \item[pre-defesa / pos-defesa] Identifica a situação do documento (exceto para qualificação), sedo necessário apenas uma das duas opções. O valor padrão é \textbf{pos-defesa};
+    
+    \item[french, spanish, english, brazil] Adiciona o idioma para correta hifenização correta no documento. O último idioma declarado é o principal do documento. O valor padrão é \textbf{brazil}.
+\end{description}
+
+{\color{red}{Embora o idioma português-brasileiro (\texttt{brazil}) seja incluído automaticamente pela classe \textsf{abntex2}, a opção \texttt{brazil} deve OBRIGATORIARMENTE ser informada para o correto funcionamento do \textit{template} para uso no idioma em inglês, de modo que todos os pacotes reconheçam ambos os idiomas.}}

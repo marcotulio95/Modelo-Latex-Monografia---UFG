@@ -1,0 +1,217 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% UFGRC: Modelo de Trabalho Acadêmico em conformidade com 
+% ABNT NBR 14724:2011: Informação e documentação - Trabalhos acadêmicos -
+% Apresentação
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+% Opções: 
+%   Tipo do trabalho     = tcc1/tcc2
+%   Situação do trabalho = pre-defesa/pos-defesa
+% -- opções do pacote babel --
+% Idioma padrão = brazil
+	%english,			% idioma adicional para hifenização
+	%brazil				% o último idioma é o PRINCIPAL do documento
+\documentclass[tcc2, pos-defesa, english, brazil]{packages/ufgrc}
+
+% ---------------------------------------------------------------------------
+% Pacotes Opcionais
+% ---------------------------------------------------------------------------
+\usepackage{rotating}           % Usado para rotacionar o texto
+\usepackage[all,knot,arc,import,poly]{xy}   % Pacote para desenhos gráficos
+% Este pacote pode conflitar com outros pacotes gráficos como o ``pictex''
+% Então é necessário usar apenas um dos pacotes conflitantes
+\newcommand{\VerbL}{0.52\textwidth}
+\newcommand{\LatL}{0.42\textwidth}
+% ---------------------------------------------------------------------------
+
+
+% ---
+% Informações de dados para CAPA e FOLHA DE ROSTO
+% ---
+% Tanto na capa quanto nas folhas de rosto apenas a primeira letra da primeira palavra (ou nomes próprios) devem estar em letra maiúscula, todas as demais devem ser em letra minúscula.
+\titulo{Modelo de monografia em LaTeX do DC/UFG -- Regional Catalão}
+\autor[Antonelli, H. L.]{Humberto Lidio Antonelli}
+\genero{M} % Gênero do autor (M = Masculino / F = Feminino)
+\orientador[Orientadora]{Prof.$^a$ Dr.$^a$}{Núbia Rosa da Silva}
+%\coorientador{Prof. Dr.}{Fulano de Tal}
+\data{03}{10}{2016} % Data da defesa
+% ---
+
+% Membros da banca examinadora
+% - O primeiro membro será automaticamente o orientador
+% - Caso haja coorientador, este será o segundo membro
+% Nome dos demais membros e suas instituições
+\membrobanca{Fulano de Tal}{Instituição do Fulano de Tal}
+\membrobanca{Ciclano de Tal}{Instituição do Ciclano de Tal}
+
+% ---
+% RESUMOS
+% ---
+
+% Resumo em PORTUGUÊS
+% conter no máximo 500 palavras
+% conter no mínimo 1 e no máximo 5 palavras-chave (obrigatoriamente separadas por vírgula)
+\textoresumo[brazil]{
+    Este trabalho é um breve modelo para a escrita de monografias de trabalhos de conclusão de curso utilizando o ambiente \LaTeX, de acordo com as normas exigidas pelo curso de Ciência da Computação, da Unidade Acadêmica Especial de Biotecnologia, da Universidade Federal de Goiás (UFG). Para a confecção deste modelo foi utilizado a última versão (1.9.6) do pacote de classes \textit{abnTeX2} que segue as normas da Associação Brasileira de Normas Técnicas. A elaboração de uma monografia, dissertação ou tese pode ser feita sobrescrevendo o conteúdo deste modelo. 
+    }{Modelo, Monografia, Trabalho de Conclusão de Curso, Latex}
+
+
+% resumo em INGLÊS
+% conter no máximo 500 palavras
+% conter no mínimo 1 e no máximo 5 palavras-chave (obrigatoriamente separadas por vírgula)
+\textoresumo[english]{
+    This paper is a brief model for writing monographs of Final Papers using \LaTeX environment, in accordance with the standards required by the Course of Computer Science, Unidade Acadêmica Especial de Biotecnologia, Federal of University of Goiás (UFG). For making this model, the latest version (1.9.6) \textit{abnTeX2} classes package was used. This package follow the rules of the Brazilian Association of Technical Standards. A drafting a monograph, dissertation or thesis can be done by overwriting the contents of this model.
+    }{Template, Monograph, Term Paper, Latex}
+    
+% ---
+% Configurações de aparência do PDF final
+% ---
+\hypersetup{
+	colorlinks=true     % false: boxed links; true: colored links
+}
+% --- 
+
+% ----------------------------------------------------------
+% ELEMENTOS PRÉ-TEXTUAIS
+% ----------------------------------------------------------
+
+% Inserir a ficha catalográfica
+%\incluifichacatalografica*{tex/pre-textual/fichaCatalografica.pdf}
+\incluifichacatalografica
+
+% DEDICATÓRIA / AGRADECIMENTO / EPÍGRAFE
+\textodedicatoria*{tex/pre-textual/dedicatoria}
+\textoagradecimentos*{tex/pre-textual/agradecimentos}
+\textoepigrafe*{tex/pre-textual/epigrafe}
+
+% Inclui a lista de figuras
+\incluilistadefiguras
+
+% Inclui a lista de tabelas
+\incluilistadetabelas
+
+% Inclui a lista de quadros
+\incluilistadequadros
+
+% Inclui a lista de algoritmos
+\incluilistadealgoritmos
+
+% Inclui a lista de códigos
+\incluilistadecodigos
+
+% Inclui a lista de siglas e abreviaturas
+\incluilistadesiglas
+
+% Inclui a lista de símbolos
+\incluilistadesimbolos
+
+% ----
+% Início do documento
+% ----
+\begin{document}
+
+% ----------------------------------------------------------
+% ELEMENTOS TEXTUAIS
+% ----------------------------------------------------------
+\textual
+
+\chapter{Introdução}
+\label{chapter:introducao}
+\input{tex/introducao}
+
+\chapter{Instalando o abnTeX2}
+\label{chapter:instalando-abntex}
+\input{tex/instalando-abntex}
+
+\chapter{Orientações gerais}
+\label{chapter:orientacoes-gerais}
+\input{tex/orientacoes-gerais}
+
+\chapter{Configuração dos elementos pré-textuais}
+\label{chapter:config-pre-textual}
+\input{tex/config-pre-textual}
+
+\chapter{Corpos flutuantes}
+\label{chapter:corpos-flutuantes}
+\input{tex/corpos-flutuantes}
+
+\chapter{Listas}
+\label{chapter:listas}
+\input{tex/listas}
+
+\chapter{Ferramentas úteis}
+\label{chapter:ferramentas-uteis}
+\input{tex/ferramentas-uteis}
+
+\chapter{Citações e referências}
+\label{chapter:citacoes}
+\input{tex/citacoes}
+
+
+% ---
+% Finaliza a parte no bookmark do PDF, para que se inicie o bookmark na raiz
+% ---
+\bookmarksetup{startatroot}% 
+% ---
+
+% ----------------------------------------------------------
+% ELEMENTOS PÓS-TEXTUAIS
+% ----------------------------------------------------------
+\postextual
+
+% ----------------------------------------------------------
+% Referências bibliográficas
+% ----------------------------------------------------------
+\bibliography{references}
+
+% ---------------------------------------------------------------------
+% GLOSSÁRIO
+% ---------------------------------------------------------------------
+
+% Arquivo que contém as definições que vão aparecer no glossário
+\input{tex/glossario}
+% Comando para incluir todas as definições do arquivo glossario.tex
+\glsaddall
+% Impressão do glossário
+\printglossaries
+
+% ----------------------------------------------------------
+% Apêndices
+% ----------------------------------------------------------
+
+% ---
+% Inicia os apêndices
+% ---
+\begin{apendicesenv}
+
+    \chapter{Documento básico usando a classe \textit{ufgrc}}
+    \label{chapter:documento-basico}
+    \input{tex/appendix/documento-basico}
+    
+    \chapter{Configuração do programa JabRef}
+    \label{chapter:configuracao-jabref}
+    \input{tex/appendix/configuracao-jabref}
+
+\end{apendicesenv}
+% ---
+
+
+% ----------------------------------------------------------
+% Anexos
+% ----------------------------------------------------------
+
+% ---
+% Inicia os anexos
+% ---
+\begin{anexosenv}
+
+    \chapter{Páginas interessantes na Internet} 
+    \label{chapter:paginas-interessantes}
+    \input{tex/annex/paginas-interessantes}
+
+\end{anexosenv}
+% ---
+
+\end{document}
